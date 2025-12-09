@@ -7,18 +7,16 @@ import java.sql.SQLException;
 public class DatabaseConnection {
 
     // ATENÇÃO: Substitua estas credenciais pelas suas
-    private static final String URL = "jdbc:postgresql://localhost:5432/financas_pessoais";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "admin";
+    private static final String URL ="jdbc:postgresql://ep-autumn-resonance-ae9uec7y-pooler.c-2.us-east-2.aws.neon.tech/neondb?user=neondb_owner&password=npg_ERbxUzFr8Sn7&sslmode=require&channelBinding=require";
 
     public static Connection getConnection() throws SQLException {
-        try {
+     //   try {
             // Tenta estabelecer a conexão
-            return DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (SQLException e) {
-            System.err.println("Erro ao conectar ao banco de dados: " + e.getMessage());
-            throw e;
-        }
+            return DriverManager.getConnection(URL);
+        //} catch (SQLException e) {
+          //  System.err.println("Erro ao conectar ao banco de dados: " + e.getMessage());
+            //throw e;
+        //}
     }
 }
 
